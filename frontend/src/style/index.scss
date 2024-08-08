@@ -1,0 +1,26 @@
+@import "./vars.scss";
+
+
+
+// Project global stylizations
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+
+body{
+    overflow-x: hidden; 
+}
+
+
+
+
+ // Pages
+@import "./pages/home/index.scss";
+
+
+// Components

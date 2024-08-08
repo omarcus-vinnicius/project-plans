@@ -1,0 +1,47 @@
+.ButtonSpan{
+    display: flex;
+    width: 170px;
+    height: 40px;
+    background-color: $color-blue-c4;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: $color-white;
+
+    font: 1.5em sans-serif;
+
+}
+
+.ButtonSpan:hover{
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.30s;
+}
+
+
+@media (max-width: 800px){
+    .ButtonSpan{
+        position: absolute;
+        top: 90%;
+        left: 85%;
+        display: flex;
+        width: 100px;
+        height: 30px;
+        background-color: $color-blue-c4;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        color: $color-white;
+    
+        font: 1.2em sans-serif;
+    
+    }
+    
+    .ButtonSpan:hover{
+        width: 160px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.30s;
+    }
+}

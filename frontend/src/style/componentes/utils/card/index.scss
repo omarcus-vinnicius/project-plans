@@ -1,0 +1,148 @@
+.container-Card {
+    display: flex;
+    width: 480px;
+    height: 400px;
+    border: $color-blue 5px solid;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 30px;
+    flex-direction: column;
+    gap: 50px;
+    margin: 10px;
+
+ 
+    box-shadow: 2px 3px 0px  $color-blue-c4;
+
+    .spannome {
+        display: flex;
+        width: 100%;
+        height: 20px;
+        justify-content: start;
+        align-items: center;
+
+        h1 {
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            font: 2.3em sans-serif;
+            color: $color-blue;
+            font-weight: 600;
+        }
+
+    }
+
+
+    .container-Card_pt1 {
+        display: flex;
+        width: 100%;
+        height: 30%;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+
+
+        .spantext {
+            display: flex;
+            width: 100%;
+            height: 20px;
+            justify-content: start;
+            align-items: center;
+            gap: 20px;
+
+
+            font: 1em sans-serif;
+            color: $color-blue-dark-b4;
+            font-weight: 600;
+
+
+            h3 {
+                font: 1em sans-serif;
+                color: $color-blue-dark-b4;
+                font-weight: 600;
+
+            }
+
+        }
+    }
+
+
+
+    .container-Card_pt2 {
+        display: flex;
+        width: 100%;
+        height: 30%;
+        flex-direction: row;
+        align-items: start;
+        gap: 80px;
+        
+
+
+        .container-Card-txt_pt2{
+            display: flex;
+            width: 60%;
+            height: 50%;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 20px;
+
+            
+        .spantext {
+            display: flex;
+            width: 100%;
+            height: 20px;
+            justify-content: start;
+            align-items: center;
+            gap: 15px;
+
+
+            font: 1em sans-serif;
+            color: $color-blue-dark-b4;
+            opacity: 90%;
+            font-weight: 600;
+
+
+            h3 {
+                font: 1em sans-serif;
+                color: $color-blue-dark-b4;
+                font-weight: 600;
+
+            }
+
+        }
+        }
+
+        .container-Card-txt_pt2 .spantext :nth-last-child(1){
+           
+            width: 130px;
+        }
+
+      .container-Card_icon{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+
+
+        .spanicon{
+            display: flex;
+            width:  100px;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+          
+            
+        }
+
+        .ativo_span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 50px;
+           
+        }
+
+      }
+
+    }
+
+
+
+}
