@@ -1,35 +1,28 @@
+
 .container-input{
   display: flex;
   width: 100%;
   height: 50px;
-  justify-content: end;
-  align-items: center;  
-  gap: 10px;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;  
+  gap: 5px;
   text-align: end;
 
-  font: 2em sans-serif;
-  color: $color-blue-dark-b4;
 
-  
+  p{
+  font: 1.2em sans-serif;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  }
 
-  .input{
-    display: flex;
-    width: 70%;
-    height: 100%;
-    padding: 10px;
-  
-    select,
-    input{
-      width: 100%;
-      height: 100%;
-      border: $color-blue-dark-b4 3px solid;
-      padding-left: 10px;
-
-
-
-    }
-
-
+  input{
+    border: 2px solid #1c1c1c;
+    font-size: 1.5rem;
+    border-radius: 5px;
+  }
     
   }
 
@@ -45,10 +38,10 @@
       input{
         width: 100%;
         height: 100%;
-        border: $color-red 3px solid;
+        border: red 3px solid;
         padding-left: 10px;
-        border-color: $color-red #83080c; ;
-        color: $color-red !important;
+        border-color: #83080c; 
+        color: red !important;
         animation: tremer .2s;
         animation-iteration-count: 3;
 
@@ -68,4 +61,4 @@
 
 }
   
-}
+

@@ -1,11 +1,97 @@
 #Home{
-   display: flex;
-   height: initial;
-   width: auto;
-   align-items: center;
+  display: flex;
+   width: 100vw;
+   height: inherit;
    justify-content: center;
-   flex-wrap: wrap;
-   gap: 50px;
+   align-items: center;
+   padding-top: 50px;
    padding-bottom: 50px;
+   flex-direction: column;
 
  }
+
+
+.home_grid_button_add {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+.home_button_add {
+    display: flex;
+    width: 100%;
+    height: auto;
+   justify-content: end;
+  
+
+  }
+
+}
+
+  .boxinput {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    border: 1px solid #4b4b4b;
+    background-color: #1F2936;
+    margin-top: 50px;
+    justify-content: space-between;
+    border-radius: 10px;
+
+
+    .input_register{
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 50px;
+    }
+
+    .textarea_register {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+      gap: 50px;
+      overflow-y: scroll;
+        scroll-behavior: smooth;
+
+    
+      .span_textarea{
+      display: flex;
+      flex-direction: column;
+      height: 90%;
+      
+     
+    label{
+      font: 1.2em sans-serif;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+      textarea{
+        display: flex;
+        width: 400px;
+        height: 90%;
+        border: 2px solid #1c1c1c;
+        resize: none;
+        padding: 5px;
+      }
+      }
+      span{
+        display: flex;
+        gap: 5px;
+      }
+    }
+
+  }
+
+
+  .OFF{
+display: none;
+z-index: 1;
+  }
