@@ -49,12 +49,12 @@ class ModelBD extends Database
 
     $statement = $this->pdo
       ->prepare("INSERT INTO plans (title, descriptions, dates, participants, locations)
-      value (:title, :descriptions, :dates, :participants, :locations);");
+      value (:title, :descriptions, :date, :participants, :locations);");
 
     $statement->execute([
       'title' => $newplans['title'],
       'descriptions' => $newplans['descriptions'],
-      'dates' => $newplans['dates'],
+      'date' => $newplans['date'],
       'participants' => $newplans['participants'],
       'locations'=>$newplans['locations']
     ]);

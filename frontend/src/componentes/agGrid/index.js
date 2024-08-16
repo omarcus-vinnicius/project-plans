@@ -25,24 +25,23 @@ const AgGridtable = () => {
 
     useEffect(()=>{
 
-        const HomePageRequests = async () => {
+        const TableRequests = async () => {
 
             await api.get('/plans')
                 .then((data) => {
                     setRowData(data.data)
                 }).catch(() => {
-                    setRowData('')
                 });
 
         }
 
-        HomePageRequests()
+        TableRequests()
         
     },[])
 
     const getId = useCallback ( param =>{})
 
-
+//    console.clear()
     return (
 
         <div  className="ag-theme-quartz-dark" style={{ width: '90vw', height: '600px',  }}>

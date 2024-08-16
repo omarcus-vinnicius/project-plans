@@ -1,22 +1,27 @@
 import "ag-grid-community/styles/ag-grid.css"; 
 import "ag-grid-community/styles/ag-theme-quartz.css"; 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AgGridtable from '../../componentes/agGrid';
 import ButtonInput from '../../componentes/utils/button';
 import InputText from '../../componentes/utils/input';
+import api from "../../connectionAPI";
+import Swal from "sweetalert2";
 
 
 
 
-const Home = () => {
-   const [register, setregister] = useState([{
-    
-   }])
+const Home = ({...dta}) => {
+  
+    const [inputs, setInputs] = useState({
+        title: '',
+        location: '',
+        date: '',
+        participants: '',
+        descriptions: ''
+})
 
-    const [boxinput, setBoxInput] = useState(false)
 
-    const setONBoxInput = () =>{
-        setBoxInput(!boxinput)
+    const setONScroll = () =>{
 
         setTimeout(()=>{
             var heightPage = document.body.scrollHeight;
@@ -25,28 +30,78 @@ const Home = () => {
        
     }
 
-    const SendRegister = () =>{
-
+    const ValidateInput = () => {
+             
+        SendRegister()
+        return true;
     }
 
+
+
+      const handlerOnChange = (text, input) => {
+
+          setInputs((prev)=>(
+              { ...prev, [input]: text.target.value }
+          ));
+
+  }
+
+  const EditRegister = (data) =>{
+      console.log(data)
+  }
+
+    const SendRegister =  ()  => {
+
+        if(dta != null){
+           EditRegister()
+        }else{ 
+     
+         api.post('/plans', {
+             title: inputs.title,
+             descriptions: inputs.descriptions,
+             date: inputs.date,
+             participants: inputs.participants,
+             locations: inputs.location
+        })
+            .then((data) => {
+                Swal.fire({
+                    title: data.res,
+                    text: "success to register",
+                    icon: 'success',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK!'
+
+                })
+                setTimeout(window.location.reload(), 1000)
+                
+            }).catch(() => {
+                Swal.fire({
+                    text: "Unable to register",
+                    icon: 'error',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK!'
+
+                })
+            });
+
+        }
+    }
+
+
+    useEffect(() => {
+      
+    }, [])
 
     return (
 
         <section id='Home' >
-            <div className='home_grid_button_add'>
-                <AgGridtable></AgGridtable>
-
-                <span className='home_button_add'>
-                    <ButtonInput valueButton={'Add + '} colorButton={'green'} opacity={'90%'} onClick={() => { setONBoxInput()}}/>
-                </span>
-            </div>
          
-            <div className={boxinput ?'boxinput':'OFF'}>
+            <div className={'boxinput'}>
                 <div className='input_register'>
-                    <InputText title={'Title'} />
-                    <InputText title={'locations:'} />
-                    <InputText title={'Date'} typeInput={'date'} Value={'yyyy-mm-dd'} />
-                    <InputText title={'participants'} typeInput={'textarea'} />
+                    <InputText title={'Title'} onChange={(text) => { handlerOnChange(text, 'title') }} value={inputs.title}/>
+                    <InputText title={'Locations:'} onChange={(text) => { handlerOnChange(text, 'location') }} value={inputs.location} />
+                    <InputText title={'Date'} typeInput={'date'} onChange={(text) => { handlerOnChange(text, 'date') }} value={inputs.date} />
+                    <InputText title={'Participants'} typeInput={'textarea'} onChange={(text) => { handlerOnChange(text, 'participants') }} value={inputs.participants} />
                 </div>
              
                 
@@ -54,16 +109,21 @@ const Home = () => {
 
                     <span className='span_textarea'>
                         <label>Descriptions</label>
-                        <textarea placeholder='Write here ...'></textarea>
+                        <textarea placeholder='Write here ...' onChange={(text) => { handlerOnChange(text, 'descriptions') }} value={inputs.descriptions}></textarea>
                     </span>
                 
                    <span>
-                        <ButtonInput valueButton={'Cancel'} colorButton={'#868585'} opacity={'81%'} onClick={() => { setONBoxInput() }} />
-                        <ButtonInput valueButton={'Send'} colorButton={'#155184'} colorText={'#ffff'} opacity={'90%'} onClick={() => { SendRegister() }} />
+                        <ButtonInput valueButton={'Cancel'} colorButton={'#868585'} opacity={'81%'} onClick={() => { setONScroll() }} />
+                        <ButtonInput valueButton={'Send'} colorButton={'#155184'} colorText={'#ffff'} opacity={'90%'} onClick={() => { ValidateInput() }} />
                     </span>
               
                 </div>
            </div>
+
+            <div className='home_grid_button_add'>
+                <AgGridtable></AgGridtable>
+            </div>
+
 
         </section>
        

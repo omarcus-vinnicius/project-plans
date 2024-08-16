@@ -16,7 +16,7 @@ final class errorInsert
 
         if (
             !isset($newuser['title']) || empty($newuser['title']) ||
-            !isset($newuser['dates']) || empty($newuser['dates']) ||
+            !isset($newuser['date']) || empty($newuser['date']) ||
             !isset($newuser['locations']) || empty($newuser['locations'])
         ) {
 

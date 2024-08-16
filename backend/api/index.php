@@ -1,10 +1,7 @@
 <?php
-
-header("Access-Control-Allow-Methods POST, GET, OPTIONS, DELETE, PUT, PATCH");
-header("Access-Control-Allow-Origin: *");
-header("X-Requested-With, Content-Type, Accept, Origin, Authorization");
-header("Access-Control-Max-Age: 1000");
-
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: X-Requested-Width, Content-Type');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT, PATCH');
 
 require_once 'vendor/autoload.php';
 require_once 'env.php';
