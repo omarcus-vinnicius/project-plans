@@ -81,7 +81,7 @@ class ModelBD extends Database
       $statement->execute([
         'title' => $newplans['title'],
         'descriptions' => $newplans['descriptions'],
-        'dates' => $newplans['dates'],
+        'dates' => $newplans['date'],
         'participants' => $newplans['participants'],
         'locations' => $newplans['locations']
       ]);
