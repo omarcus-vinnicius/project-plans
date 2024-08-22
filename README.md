@@ -42,7 +42,7 @@ No diretório do projeto, você pode executar:
 ### `npm início`
 
 Executa o aplicativo no modo de desenvolvimento.\
-Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
+Abra [http://localhost:3000/home](http://localhost:3000/home) para visualizá-lo no navegador.
 
 A página será recarregada se você fizer edições.\
 Você também verá erros de lint no console.
