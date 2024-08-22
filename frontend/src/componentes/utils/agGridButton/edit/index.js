@@ -1,6 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import Home from "../../../../pages/home";
-import Teste from "../../../../pages/teste";
 import { NavLink, useNavigate} from 'react-router-dom';
 
 const agGridButtonEdit = ({data }) => {
