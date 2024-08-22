@@ -78,3 +78,6 @@ Você pode saber mais na [documentação sobre criação do aplicativo React](ht
 
 Para aprender o React, confira a [documentação do React](https://reactjs.org/).
 
+
+Video: https://drive.google.com/file/d/1DXET8RlUIz5ViTJle66TIthkjz29qCse/view?usp=sharing
+
