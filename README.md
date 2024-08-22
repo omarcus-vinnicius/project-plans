@@ -54,7 +54,7 @@ Consulte a seção sobre [execução de testes](https://facebook.github.io/creat
 
 ### `npm executar compilação`
 
-Cria o aplicativo para produção na pasta `build`.\
+Cria o aplicativo para produção na pasta `home`.\
 Ele agrupa corretamente o React no modo de produção e otimiza a construção para obter o melhor desempenho.
 
 A compilação é reduzida e os nomes dos arquivos incluem os hashes.\
